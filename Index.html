@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>For Saksham ❤️</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600&display=swap');
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+background:#10070d;color:#f9e8df;
+font-family:Montserrat,sans-serif;overflow-x:hidden
+}
+h1,h2,h3{font-family:"Cormorant Garamond",serif}
+button,input{font-family:inherit}
+
+/* LOCK */
+#lock{
+position:fixed;inset:0;z-index:9999;
+display:flex;align-items:center;justify-content:center;
+background:
+radial-gradient(circle at 50% 30%,#651d3d 0,#2b1020 35%,#10070d 75%);
+transition:1s;padding:20px
+}
+.lockbox{
+width:min(420px,100%);padding:48px 30px;
+text-align:center;border:1px solid #d5a45e66;
+border-radius:30px;background:#ffffff0b;
+backdrop-filter:blur(18px);
+box-shadow:0 30px 100px #000b
+}
+.lockheart{font-size:55px;animation:pulse 1.4s infinite}
+.lockbox h1{font-size:58px;color:#e8bb76;margin:8px}
+.lockbox p{color:#d6bfc5;font-size:12px;letter-spacing:2px;margin-bottom:28px}
+.lockbox input{
+width:100%;padding:16px;background:#0005;
+border:1px solid #d6a15c66;border-radius:14px;
+color:white;text-align:center;font-size:18px;outline:none
+}
+.lockbox button{
+width:100%;padding:16px;margin-top:13px;border:0;
+border-radius:14px;background:linear-gradient(135deg,#e4bb7c,#a96d38);
+font-weight:bold;color:#1b0c12;cursor:pointer
+}
+#error{height:20px;margin-top:12px;color:#ff9b9b;font-size:12px}
+.hide{opacity:0;pointer-events:none}
+
+/* COMMON */
+#site{display:none}
+section{padding:100px 20px;max-width:1050px;margin:auto}
+.hero{
+min-height:100vh;max-width:none;
+display:flex;align-items:center;justify-content:center;
+text-align:center;position:relative;overflow:hidden;
+background:
+radial-gradient(circle at 50% 40%,#681d3e 0,#321020 35%,#10070d 75%)
+}
+.hero:before,.hero:after{
+content:"";position:absolute;border-radius:50%;
+border:1px solid #d6a15c22
+}
+.hero:before{width:550px;height:550px}
+.hero:after{width:750px;height:750px}
+.heroContent{position:relative;z-index:2}
+.small{
+font-size:10px;letter-spacing:5px;
+text-transform:uppercase;color:#dcae68
+}
+.hero h1{
+font-size:clamp(75px,16vw,155px);
+line-height:.75;color:#efc47f;
+text-shadow:0 0 45px #d89d5425
+}
+.hero .line{
+width:80px;height:1px;background:#dcae68;
+margin:35px auto
+}
+.hero p{font-size:13px;letter-spacing:2px;color:#d8c0c5}
+.scroll{
+margin-top:70px;font-size:10px;
+letter-spacing:4px;color:#a98c95
+}
+.title{
+font-size:clamp(45px,8vw,75px);
+color:#e8bb76;line-height:.9;margin:12px 0 35px
+}
+.card{
+border:1px solid #d6a15c2c;
+background:linear-gradient(145deg,#ffffff0d,#ffffff03);
+border-radius:28px;padding:35px;
+backdrop-filter:blur(15px);
+box-shadow:0 25px 80px #0006
+}
+.card p{color:#decdd0;font-size:14px;line-height:2}
+.center{text-align:center}
+
+/* INTRO */
+.intro{
+min-height:70vh;display:flex;
+align-items:center;text-align:center
+}
+.intro p{
+max-width:750px;margin:auto;
+font-family:"Cormorant Garamond",serif;
+font-size:clamp(25px,4vw,37px);
+line-height:1.5;color:#eadbdd
+}
+
+/* COUNTER */
+.counterBox{text-align:center}
+.counter{
+display:grid;grid-template-columns:repeat(4,1fr);
+gap:15px;margin-top:40px
+}
+.time{
+padding:28px 10px;border-radius:22px;
+border:1px solid #d6a15c35;
+background:#ffffff08
+}
+.time b{
+display:block;font-family:"Cormorant Garamond",serif;
+font-size:50px;color:#e9bb77
+}
+.time span{
+font-size:9px;letter-spacing:3px;
+text-transform:uppercase;color:#a99197
+}
+
+/* JOURNEY */
+.timeline{
+position:relative;max-width:750px;margin:auto
+}
+.timeline:before{
+content:"";position:absolute;left:20px;top:0;bottom:0;
+width:1px;background:linear-gradient(#dcae68,#5b263b,#dcae68)
+}
+.event{position:relative;padding-left:65px;margin-bottom:45px}
+.dot{
+position:absolute;left:10px;top:5px;width:21px;height:21px;
+border-radius:50%;background:#dcae68;
+box-shadow:0 0 20px #dcae6877
+}
+.event span{font-size:10px;letter-spacing:3px;color:#dcae68}
+.event h3{font-size:32px;color:#f0c987;margin:5px 0}
+.event p{font-size:13px;line-height:1.8;color:#cdb9bd}
+
+/* LETTER */
+.letter{
+position:relative;overflow:hidden
+}
+.letter:before{
+content:"“";position:absolute;
+right:20px;top:-45px;font:180px "Cormorant Garamond";
+color:#dcae6812
+}
+.letter p{
+font-family:"Cormorant Garamond",serif;
+font-size:23px;line-height:1.65;color:#eadbdd
+}
+
+/* PROMISES */
+.grid{
+display:grid;grid-template-columns:repeat(2,1fr);
+gap:16px
+}
+.promise{
+padding:28px;border:1px solid #d6a15c2c;
+border-radius:22px;background:#ffffff06
+}
+.promise .icon{font-size:28px;color:#dcae68}
+.promise h3{font-size:28px;color:#e8bb76;margin:8px 0}
+.promise p{font-size:12px;line-height:1.8;color:#cbb7bb}
+
+/* BIG MESSAGE */
+.bigMessage{
+min-height:75vh;display:flex;
+align-items:center;justify-content:center;text-align:center
+}
+.bigMessage h2{
+font-size:clamp(45px,9vw,90px);
+line-height:.95;color:#edc17b
+}
+.bigMessage p{
+margin-top:30px;font-family:"Cormorant Garamond";
+font-size:25px;color:#d8c4c7
+}
+
+/* CERTIFICATE */
+.certificate{
+position:relative;text-align:center;
+padding:55px 30px;
+border:2px solid #dcae68;
+outline:1px solid #dcae6844;
+outline-offset:-12px;
+background:
+linear-gradient(135deg,#dcae6809,#ffffff04)
+}
+.certificate .seal{
+font-size:45px;margin-bottom:15px;
+animation:pulse 2s infinite
+}
+.certificate h2{
+font-size:65px;color:#e9bd78
+}
+.certificate h3{
+font-size:38px;margin:15px;color:#f4ded8
+}
+.certificate p{font-family:"Cormorant Garamond";font-size:21px}
+.certificate small{color:#a99197}
+
+/* FINAL */
+.final{
+min-height:100vh;display:flex;
+align-items:center;justify-content:center;
+text-align:center
+}
+.final .heart{
+font-size:70px;animation:pulse 1.3s infinite
+}
+.final h2{
+font-size:clamp(55px,12vw,110px);
+color:#edc17c;line-height:.8;margin:20px
+}
+.final p{
+font-family:"Cormorant Garamond";
+font-size:25px;color:#dbc7ca
+}
+footer{text-align:center;padding:30px;color:#76636a;font-size:10px;letter-spacing:2px}
+
+/* HEARTS */
+.floatHeart{
+position:fixed;bottom:-40px;color:#dcae6844;
+font-size:20px;z-index:-1;
+animation:float 9s linear infinite
+}
+.h1{left:8%;animation-delay:0s}
+.h2{left:25%;animation-delay:3s}
+.h3{left:52%;animation-delay:1s}
+.h4{left:76%;animation-delay:5s}
+.h5{left:91%;animation-delay:2s}
+
+.reveal{
+opacity:0;transform:translateY(45px);
+transition:1s ease
+}
+.reveal.show{opacity:1;transform:none}
+
+@keyframes pulse{
+0%,100%{transform:scale(1)}
+50%{transform:scale(1.13)}
+}
+@keyframes float{
+0%{transform:translateY(0) rotate(0);opacity:0}
+15%{opacity:1}
+100%{transform:translateY(-110vh) rotate(360deg);opacity:0}
+}
+
+@media(max-width:650px){
+section{padding:75px 17px}
+.card{padding:25px}
+.counter{grid-template-columns:1fr 1fr}
+.grid{grid-template-columns:1fr}
+.hero h1{font-size:82px}
+.letter p{font-size:20px}
+.certificate h2{font-size:52px}
+}
+</style>
+</head>
+
+<body>
+
+<!-- SECRET SCREEN -->
+<div id="lock">
+<div class="lockbox">
+<div class="lockheart">❤️</div>
+<h1>For Saksham</h1>
+<p>A LITTLE SECRET AWAITS YOU</p>
+<input id="code" type="password" placeholder="Enter the secret code">
+<button onclick="unlock()">UNLOCK MY HEART ✨</button>
+<div id="error"></div>
+</div>
+</div>
+
+<div id="site">
+
+<div class="floatHeart h1">♥</div>
+<div class="floatHeart h2">♡</div>
+<div class="floatHeart h3">♥</div>
+<div class="floatHeart h4">♡</div>
+<div class="floatHeart h5">♥</div>
+
+<!-- HERO -->
+<section class="hero">
+<div class="heroContent reveal">
+<div class="small">A little corner of my heart</div>
+<h1>Saksham</h1>
+<div class="line"></div>
+<p>Some people enter your life...</p>
+<p>and somehow become your favourite part of it. ❤️</p>
+<div class="scroll">SCROLL TO DISCOVER ↓</div>
+</div>
+</section>
+
+<!-- INTRO -->
+<section class="intro">
+<div class="reveal">
+<div class="small">Before anything else...</div>
+<div class="card">
+<p>
+I don't think I say this enough, but you genuinely mean so much to me.
+You have become such an important part of my life, and having you by my
+side is something I will always be grateful for.
+</p>
+</div>
+</div>
+</section>
+
+<!-- COUNTER -->
+<section>
+<div class="counterBox reveal">
+<div class="small">Since 20 December 2025</div>
+<h2 class="title">Our Time</h2>
+<p style="color:#ad969b;font-size:12px">Every second with you counts. ❤️</p>
+<div class="counter">
+<div class="time"><b id="days">0</b><span>Days</span></div>
+<div class="time"><b id="hours">0</b><span>Hours</span></div>
+<div class="time"><b id="mins">0</b><span>Minutes</span></div>
+<div class="time"><b id="secs">0</b><span>Seconds</span></div>
+</div>
+</div>
+</section>
+
+<!-- JOURNEY -->
+<section>
+<div class="reveal">
+<div class="small">Our story</div>
+<h2 class="title">The Beginning</h2>
+<div class="timeline">
+
+<div class="event">
+<div class="dot"></div>
+<span>20 DECEMBER 2025</span>
+<h3>It started here.</h3>
+<p>
+One date. One beginning. And a chapter that slowly became one of
+the most special parts of my life.
+</p>
+</div>
+
+<div class="event">
+<div class="dot"></div>
+<span>THE LITTLE THINGS</span>
+<h3>Then came the moments.</h3>
+<p>
+Random conversations, endless laughs, silly moments, little arguments,
+understanding each other and making memories without even trying.
+</p>
+</div>
+
+<div class="event">
+<div class="dot"></div>
+<span>TODAY</span>
+<h3>And here we are.</h3>
+<p>
+Still creating little memories, still learning each other,
+and still making ordinary days feel a little more special.
+</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- LETTER -->
+<section>
+<div class="reveal">
+<div class="small">Words I don't always say</div>
+<h2 class="title">A Letter For You</h2>
+
+<div class="card letter">
+<p>
+I don't think I say this enough, but you genuinely mean so much to me.
+You've become such an important part of my life, and having you by my side
+is something I'll always be grateful for.
+<br><br>
+Thank you for being there for me, for listening to me even when I don't know
+how to explain what I'm feeling, for understanding the little things, and for
+making me feel loved in ways you probably don't even realise.
+Thank you for being patient with me, for making me smile on bad days,
+and for simply being you.
+<br><br>
+I value every little thing about what we have — the random conversations,
+the laughs, the silly moments, even the little arguments. It's not just about
+the big things; it's all those small moments with you that make you so
+special to me.
+<br><br>
+I hope you always know that you're appreciated, you're valued, and you're
+loved more than I can sometimes put into words. Having you in my life feels
+really special, and honestly, I wouldn't want it any other way. ❤️
+</p>
+</div>
+</div>
+</section>
+
+<!-- PROMISES -->
+<section>
+<div class="reveal">
+<div class="small">A few things from me</div>
+<h2 class="title">Little Promises</h2>
+
+<div class="grid">
+
+<div class="promise">
+<div class="icon">♡</div>
+<h3>Always Listen</h3>
+<p>I'll always try to understand what's in your heart, even when words aren't enough.</p>
+</div>
+
+<div class="promise">
+<div class="icon">♡</div>
+<h3>Keep Laughing</h3>
+<p>I'll always cherish our random talks, stupid jokes and those little laughs.</p>
+</div>
+
+<div class="promise">
+<div class="icon">♡</div>
+<h3>Value You</h3>
+<p>I'll never forget how special and important you are to me.</p>
+</div>
+
+<div class="promise">
+<div class="icon">♡</div>
+<h3>Make Memories</h3>
+<p>Here's to more ordinary days becoming our favourite memories.</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- BIG MESSAGE -->
+<section class="bigMessage">
+<div class="reveal">
+<div class="small">If you ever forget...</div>
+<h2>You are<br>important to me.</h2>
+<p>More than these few words could ever explain.</p>
+</div>
+</section>
+
+<!-- CERTIFICATE -->
+<section>
+<div class="reveal">
+<div class="certificate card">
+<div class="seal">♡</div>
+<div class="small">Officially awarded to</div>
+<h2>Best Boyfriend</h2>
+<h3>Saksham Dwivedi</h3>
+<p>
+For being someone who makes ordinary moments feel special,
+for the patience, the smiles, the understanding,
+and simply for being you.
+</p>
+<br>
+<small>Presented with love • 2026</small>
+</div>
+</div>
+</section>
+
+<!-- FINAL -->
+<section class="final">
+<div class="reveal">
+<div class="heart">❤️</div>
+<div class="small">One last thing...</div>
+<h2>Happy<br>Boyfriend's Day</h2>
+<p>
+Thank you for being you.<br>
+Thank you for being mine.<br>
+And thank you for making<br>
+my world a little more beautiful.
+</p>
+</div>
+</section>
+
+<footer>
+MADE WITH LOVE • JUST FOR YOU ❤️
+</footer>
+
+</div>
+
+<script>
+const start=new Date("2025-12-20T00:00:00");
+
+function unlock(){
+let code=document.getElementById("code").value;
+let error=document.getElementById("error");
+
+if(code==="201225"){
+document.getElementById("lock").classList.add("hide");
+document.getElementById("site").style.display="block";
+setTimeout(()=>{
+document.getElementById("lock").style.display="none";
+reveal();
+},700);
+}else{
+error.innerText="Wrong code... try again ❤️";
+}
+}
+
+document.getElementById("code").addEventListener("keydown",function(e){
+if(e.key==="Enter")unlock();
+});
+
+function counter(){
+let x=Math.max(0,Date.now()-start.getTime());
+let s=Math.floor(x/1000);
+
+document.getElementById("days").innerText=Math.floor(s/86400);
+document.getElementById("hours").innerText=Math.floor((s%86400)/3600);
+document.getElementById("mins").innerText=Math.floor((s%3600)/60);
+document.getElementById("secs").innerText=s%60;
+}
+
+counter();
+setInterval(counter,1000);
+
+const observer=new IntersectionObserver(function(entries){
+entries.forEach(function(entry){
+if(entry.isIntersecting){
+entry.target.classList.add("show");
+}
+});
+},{threshold:.12});
+
+function reveal(){
+document.querySelectorAll(".reveal").forEach(function(el){
+observer.observe(el);
+});
+}
+</script>
+
+</body>
+  </html><!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>For Saksham ❤️</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600&display=swap');
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+background:#10070d;color:#f9e8df;
+font-family:Montserrat,sans-serif;overflow-x:hidden
+}
+h1,h2,h3{font-family:"Cormorant Garamond",serif}
+button,input{font-family:inherit}
+
+/* LOCK */
+#lock{
+position:fixed;inset:0;z-index:9999;
+display:flex;align-items:center;justify-content:center;
+background:
+radial-gradient(circle at 50% 30%,#651d3d 0,#2b1020 35%,#10070d 75%);
+transition:1s;padding:20px
+}
+.lockbox{
+width:min(420px,100%);padding:48px 30px;
+text-align:center;border:1px solid #d5a45e66;
+border-radius:30px;background:#ffffff0b;
+backdrop-filter:blur(18px);
+box-shadow:0 30px 100px #000b
+}
+.lockheart{font-size:55px;animation:pulse 1.4s infinite}
+.lockbox h1{font-size:58px;color:#e8bb76;margin:8px}
+.lockbox p{color:#d6bfc5;font-size:12px;letter-spacing:2px;margin-bottom:28px}
+.lockbox input{
+width:100%;padding:16px;background:#0005;
+border:1px solid #d6a15c66;border-radius:14px;
+color:white;text-align:center;font-size:18px;outline:none
+}
+.lockbox button{
+width:100%;padding:16px;margin-top:13px;border:0;
+border-radius:14px;background:linear-gradient(135deg,#e4bb7c,#a96d38);
+font-weight:bold;color:#1b0c12;cursor:pointer
+}
+#error{height:20px;margin-top:12px;color:#ff9b9b;font-size:12px}
+.hide{opacity:0;pointer-events:none}
+
+/* COMMON */
+#site{display:none}
+section{padding:100px 20px;max-width:1050px;margin:auto}
+.hero{
+min-height:100vh;max-width:none;
+display:flex;align-items:center;justify-content:center;
+text-align:center;position:relative;overflow:hidden;
+background:
+radial-gradient(circle at 50% 40%,#681d3e 0,#321020 35%,#10070d 75%)
+}
+.hero:before,.hero:after{
+content:"";position:absolute;border-radius:50%;
+border:1px solid #d6a15c22
+}
+.hero:before{width:550px;height:550px}
+.hero:after{width:750px;height:750px}
+.heroContent{position:relative;z-index:2}
+.small{
+font-size:10px;letter-spacing:5px;
+text-transform:uppercase;color:#dcae68
+}
+.hero h1{
+font-size:clamp(75px,16vw,155px);
+line-height:.75;color:#efc47f;
+text-shadow:0 0 45px #d89d5425
+}
+.hero .line{
+width:80px;height:1px;background:#dcae68;
+margin:35px auto
+}
+.hero p{font-size:13px;letter-spacing:2px;color:#d8c0c5}
+.scroll{
+margin-top:70px;font-size:10px;
+letter-spacing:4px;color:#a98c95
+}
+.title{
+font-size:clamp(45px,8vw,75px);
+color:#e8bb76;line-height:.9;margin:12px 0 35px
+}
+.card{
+border:1px solid #d6a15c2c;
+background:linear-gradient(145deg,#ffffff0d,#ffffff03);
+border-radius:28px;padding:35px;
+backdrop-filter:blur(15px);
+box-shadow:0 25px 80px #0006
+}
+.card p{color:#decdd0;font-size:14px;line-height:2}
+.center{text-align:center}
+
+/* INTRO */
+.intro{
+min-height:70vh;display:flex;
+align-items:center;text-align:center
+}
+.intro p{
+max-width:750px;margin:auto;
+font-family:"Cormorant Garamond",serif;
+font-size:clamp(25px,4vw,37px);
+line-height:1.5;color:#eadbdd
+}
+
+/* COUNTER */
+.counterBox{text-align:center}
+.counter{
+display:grid;grid-template-columns:repeat(4,1fr);
+gap:15px;margin-top:40px
+}
+.time{
+padding:28px 10px;border-radius:22px;
+border:1px solid #d6a15c35;
+background:#ffffff08
+}
+.time b{
+display:block;font-family:"Cormorant Garamond",serif;
+font-size:50px;color:#e9bb77
+}
+.time span{
+font-size:9px;letter-spacing:3px;
+text-transform:uppercase;color:#a99197
+}
+
+/* JOURNEY */
+.timeline{
+position:relative;max-width:750px;margin:auto
+}
+.timeline:before{
+content:"";position:absolute;left:20px;top:0;bottom:0;
+width:1px;background:linear-gradient(#dcae68,#5b263b,#dcae68)
+}
+.event{position:relative;padding-left:65px;margin-bottom:45px}
+.dot{
+position:absolute;left:10px;top:5px;width:21px;height:21px;
+border-radius:50%;background:#dcae68;
+box-shadow:0 0 20px #dcae6877
+}
+.event span{font-size:10px;letter-spacing:3px;color:#dcae68}
+.event h3{font-size:32px;color:#f0c987;margin:5px 0}
+.event p{font-size:13px;line-height:1.8;color:#cdb9bd}
+
+/* LETTER */
+.letter{
+position:relative;overflow:hidden
+}
+.letter:before{
+content:"“";position:absolute;
+right:20px;top:-45px;font:180px "Cormorant Garamond";
+color:#dcae6812
+}
+.letter p{
+font-family:"Cormorant Garamond",serif;
+font-size:23px;line-height:1.65;color:#eadbdd
+}
+
+/* PROMISES */
+.grid{
+display:grid;grid-template-columns:repeat(2,1fr);
+gap:16px
+}
+.promise{
+padding:28px;border:1px solid #d6a15c2c;
+border-radius:22px;background:#ffffff06
+}
+.promise .icon{font-size:28px;color:#dcae68}
+.promise h3{font-size:28px;color:#e8bb76;margin:8px 0}
+.promise p{font-size:12px;line-height:1.8;color:#cbb7bb}
+
+/* BIG MESSAGE */
+.bigMessage{
+min-height:75vh;display:flex;
+align-items:center;justify-content:center;text-align:center
+}
+.bigMessage h2{
+font-size:clamp(45px,9vw,90px);
+line-height:.95;color:#edc17b
+}
+.bigMessage p{
+margin-top:30px;font-family:"Cormorant Garamond";
+font-size:25px;color:#d8c4c7
+}
+
+/* CERTIFICATE */
+.certificate{
+position:relative;text-align:center;
+padding:55px 30px;
+border:2px solid #dcae68;
+outline:1px solid #dcae6844;
+outline-offset:-12px;
+background:
+linear-gradient(135deg,#dcae6809,#ffffff04)
+}
+.certificate .seal{
+font-size:45px;margin-bottom:15px;
+animation:pulse 2s infinite
+}
+.certificate h2{
+font-size:65px;color:#e9bd78
+}
+.certificate h3{
+font-size:38px;margin:15px;color:#f4ded8
+}
+.certificate p{font-family:"Cormorant Garamond";font-size:21px}
+.certificate small{color:#a99197}
+
+/* FINAL */
+.final{
+min-height:100vh;display:flex;
+align-items:center;justify-content:center;
+text-align:center
+}
+.final .heart{
+font-size:70px;animation:pulse 1.3s infinite
+}
+.final h2{
+font-size:clamp(55px,12vw,110px);
+color:#edc17c;line-height:.8;margin:20px
+}
+.final p{
+font-family:"Cormorant Garamond";
+font-size:25px;color:#dbc7ca
+}
+footer{text-align:center;padding:30px;color:#76636a;font-size:10px;letter-spacing:2px}
+
+/* HEARTS */
+.floatHeart{
+position:fixed;bottom:-40px;color:#dcae6844;
+font-size:20px;z-index:-1;
+animation:float 9s linear infinite
+}
+.h1{left:8%;animation-delay:0s}
+.h2{left:25%;animation-delay:3s}
+.h3{left:52%;animation-delay:1s}
+.h4{left:76%;animation-delay:5s}
+.h5{left:91%;animation-delay:2s}
+
+.reveal{
+opacity:0;transform:translateY(45px);
+transition:1s ease
+}
+.reveal.show{opacity:1;transform:none}
+
+@keyframes pulse{
+0%,100%{transform:scale(1)}
+50%{transform:scale(1.13)}
+}
+@keyframes float{
+0%{transform:translateY(0) rotate(0);opacity:0}
+15%{opacity:1}
+100%{transform:translateY(-110vh) rotate(360deg);opacity:0}
+}
+
+@media(max-width:650px){
+section{padding:75px 17px}
+.card{padding:25px}
+.counter{grid-template-columns:1fr 1fr}
+.grid{grid-template-columns:1fr}
+.hero h1{font-size:82px}
+.letter p{font-size:20px}
+.certificate h2{font-size:52px}
+}
+</style>
+</head>
+
+<body>
+
+<!-- SECRET SCREEN -->
+<div id="lock">
+<div class="lockbox">
+<div class="lockheart">❤️</div>
+<h1>For Saksham</h1>
+<p>A LITTLE SECRET AWAITS YOU</p>
+<input id="code" type="password" placeholder="Enter the secret code">
+<button onclick="unlock()">UNLOCK MY HEART ✨</button>
+<div id="error"></div>
+</div>
+</div>
+
+<div id="site">
+
+<div class="floatHeart h1">♥</div>
+<div class="floatHeart h2">♡</div>
+<div class="floatHeart h3">♥</div>
+<div class="floatHeart h4">♡</div>
+<div class="floatHeart h5">♥</div>
+
+<!-- HERO -->
+<section class="hero">
+<div class="heroContent reveal">
+<div class="small">A little corner of my heart</div>
+<h1>Saksham</h1>
+<div class="line"></div>
+<p>Some people enter your life...</p>
+<p>and somehow become your favourite part of it. ❤️</p>
+<div class="scroll">SCROLL TO DISCOVER ↓</div>
+</div>
+</section>
+
+<!-- INTRO -->
+<section class="intro">
+<div class="reveal">
+<div class="small">Before anything else...</div>
+<div class="card">
+<p>
+I don't think I say this enough, but you genuinely mean so much to me.
+You have become such an important part of my life, and having you by my
+side is something I will always be grateful for.
+</p>
+</div>
+</div>
+</section>
+
+<!-- COUNTER -->
+<section>
+<div class="counterBox reveal">
+<div class="small">Since 20 December 2025</div>
+<h2 class="title">Our Time</h2>
+<p style="color:#ad969b;font-size:12px">Every second with you counts. ❤️</p>
+<div class="counter">
+<div class="time"><b id="days">0</b><span>Days</span></div>
+<div class="time"><b id="hours">0</b><span>Hours</span></div>
+<div class="time"><b id="mins">0</b><span>Minutes</span></div>
+<div class="time"><b id="secs">0</b><span>Seconds</span></div>
+</div>
+</div>
+</section>
+
+<!-- JOURNEY -->
+<section>
+<div class="reveal">
+<div class="small">Our story</div>
+<h2 class="title">The Beginning</h2>
+<div class="timeline">
+
+<div class="event">
+<div class="dot"></div>
+<span>20 DECEMBER 2025</span>
+<h3>It started here.</h3>
+<p>
+One date. One beginning. And a chapter that slowly became one of
+the most special parts of my life.
+</p>
+</div>
+
+<div class="event">
+<div class="dot"></div>
+<span>THE LITTLE THINGS</span>
+<h3>Then came the moments.</h3>
+<p>
+Random conversations, endless laughs, silly moments, little arguments,
+understanding each other and making memories without even trying.
+</p>
+</div>
+
+<div class="event">
+<div class="dot"></div>
+<span>TODAY</span>
+<h3>And here we are.</h3>
+<p>
+Still creating little memories, still learning each other,
+and still making ordinary days feel a little more special.
+</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- LETTER -->
+<section>
+<div class="reveal">
+<div class="small">Words I don't always say</div>
+<h2 class="title">A Letter For You</h2>
+
+<div class="card letter">
+<p>
+I don't think I say this enough, but you genuinely mean so much to me.
+You've become such an important part of my life, and having you by my side
+is something I'll always be grateful for.
+<br><br>
+Thank you for being there for me, for listening to me even when I don't know
+how to explain what I'm feeling, for understanding the little things, and for
+making me feel loved in ways you probably don't even realise.
+Thank you for being patient with me, for making me smile on bad days,
+and for simply being you.
+<br><br>
+I value every little thing about what we have — the random conversations,
+the laughs, the silly moments, even the little arguments. It's not just about
+the big things; it's all those small moments with you that make you so
+special to me.
+<br><br>
+I hope you always know that you're appreciated, you're valued, and you're
+loved more than I can sometimes put into words. Having you in my life feels
+really special, and honestly, I wouldn't want it any other way. ❤️
+</p>
+</div>
+</div>
+</section>
+
+<!-- PROMISES -->
+<section>
+<div class="reveal">
+<div class="small">A few things from me</div>
+<h2 class="title">Little Promises</h2>
+
+<div class="grid">
+
+<div class="promise">
+<div class="icon">♡</div>
+<h3>Always Listen</h3>
+<p>I'll always try to understand what's in your heart, even when words aren't enough.</p>
+</div>
+
+<div class="promise">
+<div class="icon">♡</div>
+<h3>Keep Laughing</h3>
+<p>I'll always cherish our random talks, stupid jokes and those little laughs.</p>
+</div>
+
+<div class="promise">
+<div class="icon">♡</div>
+<h3>Value You</h3>
+<p>I'll never forget how special and important you are to me.</p>
+</div>
+
+<div class="promise">
+<div class="icon">♡</div>
+<h3>Make Memories</h3>
+<p>Here's to more ordinary days becoming our favourite memories.</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- BIG MESSAGE -->
+<section class="bigMessage">
+<div class="reveal">
+<div class="small">If you ever forget...</div>
+<h2>You are<br>important to me.</h2>
+<p>More than these few words could ever explain.</p>
+</div>
+</section>
+
+<!-- CERTIFICATE -->
+<section>
+<div class="reveal">
+<div class="certificate card">
+<div class="seal">♡</div>
+<div class="small">Officially awarded to</div>
+<h2>Best Boyfriend</h2>
+<h3>Saksham Dwivedi</h3>
+<p>
+For being someone who makes ordinary moments feel special,
+for the patience, the smiles, the understanding,
+and simply for being you.
+</p>
+<br>
+<small>Presented with love • 2026</small>
+</div>
+</div>
+</section>
+
+<!-- FINAL -->
+<section class="final">
+<div class="reveal">
+<div class="heart">❤️</div>
+<div class="small">One last thing...</div>
+<h2>Happy<br>Boyfriend's Day</h2>
+<p>
+Thank you for being you.<br>
+Thank you for being mine.<br>
+And thank you for making<br>
+my world a little more beautiful.
+</p>
+</div>
+</section>
+
+<footer>
+MADE WITH LOVE • JUST FOR YOU ❤️
+</footer>
+
+</div>
+
+<script>
+const start=new Date("2025-12-20T00:00:00");
+
+function unlock(){
+let code=document.getElementById("code").value;
+let error=document.getElementById("error");
+
+if(code==="201225"){
+document.getElementById("lock").classList.add("hide");
+document.getElementById("site").style.display="block";
+setTimeout(()=>{
+document.getElementById("lock").style.display="none";
+reveal();
+},700);
+}else{
+error.innerText="Wrong code... try again ❤️";
+}
+}
+
+document.getElementById("code").addEventListener("keydown",function(e){
+if(e.key==="Enter")unlock();
+});
+
+function counter(){
+let x=Math.max(0,Date.now()-start.getTime());
+let s=Math.floor(x/1000);
+
+document.getElementById("days").innerText=Math.floor(s/86400);
+document.getElementById("hours").innerText=Math.floor((s%86400)/3600);
+document.getElementById("mins").innerText=Math.floor((s%3600)/60);
+document.getElementById("secs").innerText=s%60;
+}
+
+counter();
+setInterval(counter,1000);
+
+const observer=new IntersectionObserver(function(entries){
+entries.forEach(function(entry){
+if(entry.isIntersecting){
+entry.target.classList.add("show");
+}
+});
+},{threshold:.12});
+
+function reveal(){
+document.querySelectorAll(".reveal").forEach(function(el){
+observer.observe(el);
+});
+}
+</script>
+
+</body>
+</html>
